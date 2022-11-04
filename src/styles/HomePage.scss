@@ -1,0 +1,61 @@
+.homepage {
+  background: #E5E5E5;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    transition: background 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .homepage-logo {
+      width: 120px;
+      margin-left: 80px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+
+      &-button {
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 1.14286px;
+        color: #FFFFFF;
+        cursor: pointer;
+        padding: 0 10px;
+        height: 40px;
+        background: linear-gradient(90deg, #4EE5EA 3.94%, #26D0A8 94.73%);
+        border-radius: 24px;
+        margin-right: 45px;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+  
+      &-menu {
+        cursor: pointer;
+        width: 30px;
+        height: 22px;
+        margin-right: 60px;
+
+        svg {
+          &:hover {
+            fill: #26C6D0;
+          }
+        }
+      }
+    }
+  }
+}

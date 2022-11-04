@@ -1,0 +1,138 @@
+.landing {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #E5E5E5;
+
+  &-video {
+    right: 0;
+    bottom: 0;
+    //width: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    border-radius: 0 0 50px 50px;
+    object-fit: cover;
+  }
+
+  &__filter {
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 0 50px 50px;
+  }
+
+  &__side {
+    position: absolute;
+    top: calc(50% - 19px/2 - 97px);
+    z-index: 3;
+    left: 4.34%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .side-text {
+      width: 19px;
+      height: 157px;
+    }
+
+    .side-line {
+      height: 113px;
+      width: 2px;
+      margin-top: 24px;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    display: flex;
+    left: 15.28%;
+    right: 6.61%;
+    top: calc(50% - 386px/2);
+    flex-direction: column;
+    z-index: 3;
+
+    .logo {
+      max-width: 199px;
+      width: 100%;
+      height: 88px;
+      margin-bottom: 34px;
+    }
+
+
+    .slogan__line {
+      position: relative;
+      max-width: 525px;
+
+      &::after {
+        position: absolute;
+        height: 8px;
+        width: 96%;
+        background-color: #26C6D0;
+        content: '';
+        margin: 0;
+        left: -2%;
+        bottom: 11%;
+        z-index: -1;
+      }
+
+      .slogan {
+        width: 100%;
+      }
+
+      .line {
+        position: absolute;
+        border: 8px solid #26C6D0;
+        width: 90%;
+        bottom: 10px;
+      }
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 50px;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .bottom-container {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .salad {
+        max-width: 65px;
+        width: 100%;
+        margin-bottom: 10px;
+        transition: transform 0.5s;
+      }
+
+      .bottom-text {
+        font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        transition: all 0.5s;
+      }
+
+      &:hover .salad {
+        transform: scale(1.1);
+      }
+
+      &:hover .bottom-text {
+        font-size: 16px;
+      }
+    }
+  }
+}
