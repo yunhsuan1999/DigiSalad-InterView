@@ -2,164 +2,227 @@
   position: relative;
   background-image: url('../../public/static/images/carousel-background.jpg');
   height: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-position-y: -490px;
   background-attachment: fixed;
   background-repeat: no-repeat 50%;
+  display: flex;
+
+  .page {
+    position: absolute;
+    top: 250px;
+    right: 100px;
+    display: flex;
+
+    &-index {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.22222px;
+      color: #FFFFFF;
+      margin: -3px 5px 0 0;
+    }
+
+    &-index-of {
+      border: 1px solid #26C6D0;
+      height: 40px;
+      transform: rotate(-135deg);
+    }
+
+    &-amount {
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.22222px;
+      color: #FFFFFF;
+      align-self: flex-end;
+      margin: 0 0 -3px 5px;
+    }
+
+    @media (max-width: 1024px) {
+      top: 100px;
+      right: 100px;
+
+    }
+  }
 
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 
-    &__image {
-      max-width: 540px;
-      max-height: 540px;
-      position: relative;
+    .center-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      .image {
-        width: 100%;
-        background: #4D4D4D;
-        border-radius: 30px;
+      &__image {
+        max-width: 540px;
+        max-height: 540px;
+        position: relative;
+
+        .image {
+          width: 100%;
+          background: #4D4D4D;
+          border-radius: 30px;
+        }
+
+        @media (max-width: 1024px) {
+          max-width: 350px;
+          max-height: 350px;
+        }
+
+        @media (max-width: 1399px) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .carousel__more {
+          cursor: pointer;
+          position: absolute;
+          bottom: -90px;
+          right: -150px;
+          max-width: 300px;
+          transition: transform .3s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          .more {
+            width: 100%;
+          }
+
+          @media (max-width: 1399px) {
+            bottom: -60px;
+            right: unset;
+            max-width: 225px;
+          }
+
+          @media (max-width: 1024px) {
+            bottom: -45px;
+            right: unset;
+          }
+        }
+      }
+
+      &__text {
+        max-width: 430px;
+        margin-left: 60px;
+
+        .highlight {
+          font-family: 'Proxima Nova';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: 2.22222px;
+          color: #FFFFFF;
+
+          @media (max-width: 1024px) {
+            margin-top: 30px;
+          }
+        }
+
+        .title-container {
+          position: relative;
+          display: inline-block;
+          z-index: 0;
+
+          .title {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            letter-spacing: 3.63636px;
+            color: #FFFFFF;
+            margin-top: 20px;
+            z-index: 2;
+  
+            &::before {
+              content: '';
+              border: 3px solid #26C6D0;
+              //width: 400px;
+              position: absolute;
+              width: 100%;
+              bottom: 6px;
+              left: -1%;
+              z-index: -1;
+            }
+  
+            &::after {
+              content: '';
+              height: 10px;
+              width: 10px;
+              background-color: #EE6C8A;
+              border-radius: 50%;
+              position: absolute;
+              bottom: 8px;
+              right: -30px;
+            }
+          }
+        }
+
+        .description {
+          font-family: 'Proxima Nova';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1px;
+          color: #FFFFFF;
+          margin-top: 40px;
+          width: 100%;
+
+          @media (max-width: 1024px) {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-line-clamp: 10;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          margin-left: 0;
+          text-align: center;
+          margin-top: 40px;
+        }
       }
 
       @media (max-width: 1024px) {
-        max-width: 350px;
-        max-height: 350px;
-
+        flex-direction: column;
+        padding-top: 100px;
       }
+    }
 
-      @media (max-width: 1399px) {
-        display: flex;
-        justify-content: center;
+    .right-icon {
+      padding: 0 45px 0 100px;
+      cursor: pointer;
+      transition: transform .3s;
 
+      &:hover {
+        transform: scale(1.1);
       }
+    }
 
-      .carousel__more {
+    .left-items {
+      padding: 0 100px 0 45px;
+
+      .left-icon {
+
         cursor: pointer;
-        position: absolute;
-        bottom: -90px;
-        right: -150px;
-        max-width: 300px;
         transition: transform .3s;
 
         &:hover {
           transform: scale(1.1);
         }
-
-        .more {
-          width: 100%;
-        }
-
-        @media (max-width: 1399px) {
-          bottom: -60px;
-          right: unset;
-          max-width: 225px;
-        }
-
-        @media (max-width: 1024px) {
-          bottom: -45px;
-          right: unset;
-        }
       }
-    }
-
-    &__text {
-      max-width: 430px;
-      margin-left: 60px;
-
-      .highlight {
-        font-family: 'Proxima Nova';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 19px;
-        letter-spacing: 2.22222px;
-        color: #FFFFFF;
-
-        @media (max-width: 1024px) {
-          margin-top: 30px;
-        }
-      }
-
-      .title {
-        font-family: 'Proxima Nova';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 39px;
-        letter-spacing: 3.63636px;
-        color: #FFFFFF;
-        margin-top: 20px;
-        position: relative;
-        z-index: 2;
-
-        &::before {
-          content: '';
-          border: 3px solid #26C6D0;
-          //width: 400px;
-          position: absolute;
-          width: 100%;
-          bottom: 6px;
-          left: -1%;
-          z-index: -1;
-        }
-
-        &::after {
-          content: '';
-          height: 10px;
-          width: 10px;
-          background-color: #EE6C8A;
-          border-radius: 50%;
-          position: absolute;
-          bottom: 8px;
-          right: -30px;
-        }
-      }
-
-      .description {
-        font-family: 'Proxima Nova';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 1px;
-        color: #FFFFFF;
-        margin-top: 40px;
-        width: 100%;
-      }
-
-      @media (max-width: 1024px) {
-        margin-left: 0;
-        text-align: center;
-        margin-top: 40px;
-      }
-    }
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-    }
-  }
-
-  .right-icon {
-    padding: 0 45px 0 100px;
-    cursor: pointer;
-    transition: transform .3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  .left-icon {
-    padding: 0 100px 0 45px;
-    cursor: pointer;
-    transition: transform .3s;
-
-    &:hover {
-      transform: scale(1.1);
     }
   }
 }
