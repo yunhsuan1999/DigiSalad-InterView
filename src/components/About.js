@@ -21,13 +21,19 @@ const About = () => {
 
   return (
     <div className="about" id="about">
-      <div className="about__title">
-        <img className="text" src="/static/images/about-title.svg" alt="text" />
-        <img
-          className="underline"
-          src="/static/images/about-title-underline.svg"
-          alt="line"
-        />
+      <div className="about__header-container">
+        <div className="about-title">
+          <img
+            className="text"
+            src="/static/images/about-title.svg"
+            alt="text"
+          />
+          <img
+            className="underline"
+            src="/static/images/about-title-underline.svg"
+            alt="line"
+          />
+        </div>
       </div>
       <div className="about__video" onClick={onVideoClick}>
         <div className="video-container">
@@ -54,7 +60,7 @@ const About = () => {
       <div className="about__more">
         <div className="more-button">
           <div className="text">VIEW MORE</div>
-          <div className='line'/>
+          <div className="line" />
         </div>
       </div>
     </div>

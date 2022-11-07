@@ -56,41 +56,40 @@ const CarouselSection = () => {
         <div className="page-amount">{value < 10 ? '0' + value : value}</div>
       </div>
       <div className="carousel__container">
-        <img
-          className="right-icon"
-          src="static/images/carousel-right-icon.svg"
-          alt="icon"
-          onClick={onRightClick}
-        />
+        <div className="carousel__container-items">
+          <img
+            className="right-icon"
+            src="static/images/carousel-right-icon.svg"
+            alt="icon"
+            onClick={onRightClick}
+          />
 
-        <div className="center-items">
-          <div className="center-items__image">
-            <img
-              className="image"
-              src={CAROUSEL_ITEMS[index].src}
-              alt="carousel"
-            />
-            <div className="carousel__more">
+          <div className="center-items">
+            <div className="center-items__image">
               <img
-                className="more"
-                src="static/images/carousel-view.svg"
-                alt="line"
+                className="image"
+                src={CAROUSEL_ITEMS[index].src}
+                alt="carousel"
               />
+              <div className="carousel__more">
+                <div className="more-button">
+                  <div className="text">VIEW PROJECT</div>
+                  <div className="line" />
+                </div>
+              </div>
+            </div>
+
+            <div className="center-items__text">
+              <div className="highlight">{CAROUSEL_ITEMS[index].highlight}</div>
+              <div className="title-container">
+                <div className="title">{CAROUSEL_ITEMS[index].title}</div>
+              </div>
+              <div className="description">
+                {CAROUSEL_ITEMS[index].description}
+              </div>
             </div>
           </div>
 
-          <div className="center-items__text">
-            <div className="highlight">{CAROUSEL_ITEMS[index].highlight}</div>
-            <div className="title-container">
-              <div className="title">{CAROUSEL_ITEMS[index].title}</div>
-            </div>
-            <div className="description">
-              {CAROUSEL_ITEMS[index].description}
-            </div>
-          </div>
-        </div>
-
-        <div className="left-items">
           <img
             className="left-icon"
             src="static/images/carousel-left-icon.svg"

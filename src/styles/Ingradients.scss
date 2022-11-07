@@ -88,6 +88,10 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+
     .items {
       max-width: 345px;
       display: flex;
@@ -187,6 +191,10 @@
       text-transform: uppercase;
       color: #FFFFFF;
       cursor: pointer;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
     }
   }
 }

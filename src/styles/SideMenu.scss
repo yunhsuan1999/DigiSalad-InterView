@@ -1,3 +1,20 @@
+@mixin menu-items($bgImage, $bgColor) {
+  width: 100%;
+  height: 100%;
+  background: $bgImage, $bgColor;
+  border-radius: 30px;
+  cursor: pointer;
+  background-size: 100%;
+  background-position: center;
+  transition: all .5s;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @mixin slogan($textColor) {
   font-family: 'Proxima Nova';
   font-style: normal;
@@ -9,6 +26,10 @@
 
   @media (max-width: 1100px) {
     font-size: 14px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -36,14 +57,32 @@
   @media (max-width: 1100px) {
     font-size: 24px;
   }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
 }
 
 @keyframes tilt-shaking {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  50% { transform: rotate(0eg); }
-  75% { transform: rotate(-15deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(0eg);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .side-menu {
@@ -68,7 +107,6 @@
     .logo {
       width: 140px;
       margin: 40px 0 0 60px;
-
     }
 
     .close-button {
@@ -89,6 +127,12 @@
     padding: 0 20px;
     height: calc(100% - 102px);
 
+    @media screen and (max-width: 768px) {
+      height: calc(100% - 180px);
+      margin: 40px auto;
+      padding: 0 40px;
+    }
+
     .side-menu__container {
       width: 100%;
       height: 100%;
@@ -96,6 +140,12 @@
       grid-template-columns: 1fr 0.76fr 1fr;
       gap: 40px;
       align-items: center;
+
+      @media screen and (max-width: 768px) {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: none;
+        gap: 20px;
+      }
 
       .left {
         box-sizing: border-box;
@@ -105,22 +155,24 @@
         padding: 40px 0 105px 0;
         gap: 40px;
 
+        @media screen and (max-width: 768px) {
+          grid-template-rows: 1fr 1fr;
+          padding: 0;
+          gap: 20px;
+        }
+
         .about-us {
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background: url('../../public/static/images/about-us.svg'), #26C6D0;
-          border-radius: 30px;
+          @include menu-items(url('../../public/static/images/about-us.svg'), #26C6D0);
           display: flex;
           align-items: center;
-          cursor: pointer;
-          background-size: 100%;
-          background-position: center;
-          transition: all .5s;
 
           .image {
             width: 40px;
             margin-left: 40px;
+
+            @media screen and (max-width: 768px) {
+              display: none;
+            }
           }
 
           .text {
@@ -152,25 +204,25 @@
         }
 
         .works {
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background: url('../../public/static/images/works.svg'), #EE6C8A;
-          border-radius: 30px;
+          @include menu-items(url('../../public/static/images/works.svg'), #EE6C8A);
           display: flex;
           align-items: flex-end;
-          cursor: pointer;
-          background-size: 100%;
-          background-position: center;
-          transition: all .5s;
 
           .items {
             display: flex;
             margin-bottom: 60px;
 
+            @media screen and (max-width: 768px) {
+              margin-bottom: 0;
+            }
+
             .image {
               width: 41px;
               margin-left: 40px;
+
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
             }
 
             .text {
@@ -211,25 +263,32 @@
         height: 100%;
         padding: 0 0 45px 0;
 
+        @media screen and (max-width: 768px) {
+          grid-template-rows: 1fr 1fr;
+          padding: 0;
+          gap: 20px;
+        }
+
         .careers {
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background: url('../../public/static/images/careers.svg'), #E6A94E;
-          border-radius: 30px;
+          @include menu-items(url('../../public/static/images/careers.svg'), #E6A94E);
           position: relative;
-          cursor: pointer;
-          background-size: 100%;
-          background-position: center;
-          transition: all .5s;
 
           .items {
             position: absolute;
             bottom: 50px;
             margin-left: 40px;
 
+            @media screen and (max-width: 768px) {
+              position: unset;
+              margin-left: 0;
+            }
+
             .image {
               width: 91px;
+
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
             }
 
             .slogan {
@@ -240,6 +299,10 @@
             .title-container {
               display: inline-block;
               position: relative;
+
+              @media screen and (max-width: 768px) {
+                margin-left: 30px;
+              }
 
               .title {
                 @include title(#FFFFFF, #EE6C8A);
@@ -258,24 +321,25 @@
         }
 
         .insights {
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background: url('../../public/static/images/insights.svg'), #26D0A8;
-          border-radius: 30px;
+          @include menu-items(url('../../public/static/images/insights.svg'), #26D0A8);
           position: relative;
-          cursor: pointer;
-          background-size: 100%;
-          background-position: center;
-          transition: all .5s;
 
           .items {
             position: absolute;
             bottom: 50px;
             margin-left: 40px;
 
+            @media screen and (max-width: 768px) {
+              position: unset;
+              margin-left: 0;
+            }
+
             .image {
               width: 24px;
+
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
             }
 
             .slogan {
@@ -286,6 +350,10 @@
             .title-container {
               display: inline-block;
               position: relative;
+
+              @media screen and (max-width: 768px){
+                margin-left: 30px;
+              }
 
               .title {
                 @include title(#FFFFFF, #EE6C8A);
@@ -312,25 +380,32 @@
         gap: 40px;
         padding: 40px 0 105px 0;
 
-        .services {
-          width: 100%;
-          height: 100%;
-          background-repeat: no-repeat;
-          background: url('../../public/static/images/service.svg'), #585880;
-          border-radius: 30px;
+        @media screen and (max-width: 768px) {
+          grid-template-rows: 1fr 1fr;
+          padding: 0;
+          gap: 20px;
+        }
+
+        .services {          
+          @include menu-items(url('../../public/static/images/service.svg'), #585880);
           position: relative;
-          cursor: pointer;
-          background-size: 100%;
-          background-position: center;
-          transition: all .5s;
 
           .items {
             position: absolute;
             bottom: 50px;
             margin-left: 40px;
 
+            @media screen and (max-width: 768px) {
+              position: unset;
+              margin-left: 0;
+            }
+
             .image {
               width: 36px;
+
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
             }
 
             .slogan {
@@ -341,6 +416,10 @@
             .title-container {
               display: inline-block;
               position: relative;
+
+              @media screen and (max-width: 768px){
+                margin-left: 30px;
+              }
 
               .title {
                 @include title(#FFFFFF, #EE6C8A);
@@ -366,13 +445,19 @@
           position: relative;
           cursor: pointer;
 
+          @media screen and (max-width: 768px) {
+            display: flex;
+            align-items: center;
+          }
+
           .items {
             position: absolute;
             bottom: 50px;
             margin-left: 40px;
 
-            .image {
-              width: 36px;
+            @media screen and (max-width: 768px) {
+              position: unset;
+              margin-left: 0;
             }
 
             .slogan {
@@ -382,6 +467,10 @@
             .title-container {
               display: inline-block;
               position: relative;
+
+              @media screen and (max-width: 768px){
+                margin-left: 30px;
+              }
 
               .title {
                 @include title(#26C6D0, #EE6C8A);

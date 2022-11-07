@@ -7,21 +7,24 @@
   flex-direction: column;
   background: #E5E5E5;
 
-  &__title {
-    display: flex;
-    flex-direction: column;
-    padding: 0 25px;
+  &__header-container {
     max-width: 750px;
-    margin: 0 auto 70px;
 
-    .text {
-      max-width: 365px;
-      width: 100%;
-    }
-
-    .underline {
-      max-width: 369px;
-      width: 100%;
+    .about-title {
+      display: flex;
+      flex-direction: column;
+      padding: 0 25px;
+      margin: 0 auto 70px;
+  
+      .text {
+        max-width: 365px;
+        width: 100%;
+      }
+  
+      .underline {
+        max-width: 369px;
+        width: 100%;
+      }
     }
   }
 
@@ -63,7 +66,7 @@
   }
 
   &__text {
-    max-width: 1024px;
+    max-width: 750px;
     padding: 0 25px;
     margin: 0 auto 70px;
     font-family: 'Proxima Nova';
